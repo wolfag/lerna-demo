@@ -1,0 +1,27 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-react": "^7.8.3",
+    "@storybook/react": "^5.3.14",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-styled-components": "^1.10.7",
+    "lerna": "^3.20.2",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "styled-components": "^5.0.1",
+    "webpack": "^4.41.6"
+  },
+  "scripts": {
+    "build": "npx lerna exec --parallel -- babel --root-mode upward src -d lib --ignore **/*.story.js,**/*.spec.js",
+    "dev": "start-storybook -p 5555",
+    "bootstrap": "npx lerna bootstrap --use-workspaces"
+  }
+}
